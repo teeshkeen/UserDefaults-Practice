@@ -45,14 +45,14 @@ class ViewController: UIViewController {
 
 // MARK: - private methods
 extension ViewController {
-    func updateUI() {
+    private func updateUI() {
         
         dataLabel.text = "Запусков приложения - \(saveCurrentLaunch())"
         dataTextField.text = UserDefaults.standard.string(forKey: textFieldInputKey)
         segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: segmentIndexKey)
     }
     
-    func saveCurrentLaunch() -> Int {
+    private func saveCurrentLaunch() -> Int {
         let index = UserDefaults.standard.integer(forKey: numberOfLaunchesKey)
         UserDefaults.standard.setValue(index + 1, forKey: numberOfLaunchesKey)
         
